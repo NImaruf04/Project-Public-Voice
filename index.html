@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>জনকণ্ঠ | অভিযোগ ব্যবস্থাপনা</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="overrides.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="#"><span class="mark">জ</span><span>জনকণ্ঠ<small>PUBLIC VOICE</small></span></a>
+        <nav>
+          <a class="active" id="navDashboard" href="#dashboard"><span>▦</span><span data-i18n="dashboard"> ড্যাশবোর্ড</span></a>
+          <a id="navComplaints" href="#complaints"><span>▱</span><span data-i18n="myComplaints"> আমার অভিযোগ</span> <b>3</b></a>
+          <a id="navNewComplaint" href="#new-complaint"><span>＋</span><span data-i18n="newComplaint"> নতুন অভিযোগ</span></a>
+          <a id="navNotifications" href="#notifications"><span>◉</span><span data-i18n="notifications"> বিজ্ঞপ্তি</span> <b class="orange">2</b></a>
+        </nav>
+        <div class="help-card"><span>?</span><div><strong data-i18n="help">সাহায্য প্রয়োজন?</strong><small data-i18n="hotline">হটলাইন ৩৩৩ · ২৪ ঘণ্টা</small></div></div>
+        <div class="panel-size-control"><div><span>প্যানেলের আকার</span><output id="sidebarSizeValue">২৬৬px</output></div><input id="sidebarSize" type="range" min="220" max="360" value="266" aria-label="সাইড প্যানেলের আকার" /></div>
+        <div class="profile"><div class="avatar">আর</div><div><strong>আরিফুল ইসলাম</strong><small data-i18n="citizenAccount">নাগরিক অ্যাকাউন্ট</small></div><button class="account-button" id="openAccount" title="অ্যাকাউন্ট তৈরি বা পরিবর্তন">অ্যাকাউন্ট</button></div>
+      </aside>
+
+      <main>
+        <header>
+          <button class="menu" aria-label="মেনু">☰</button>
+          <div class="welcome"><p id="liveDateTime"></p><h1><span id="timeGreeting">শুভ সকাল</span>, আরিফুল <span>👋</span></h1></div>
+          <div class="header-actions"><button class="bell" aria-label="বিজ্ঞপ্তি">♢<i></i></button><label class="language-select"><span class="sr-only">Language</span><select id="languageSelector" aria-label="Language selector"><option value="bn">বাংলা</option><option value="en">English</option></select></label></div>
+        </header>
+
+        <section id="dashboard" class="hero">
+          <div><span class="eyebrow" data-i18n="portal">নাগরিক অভিযোগ পোর্টাল</span><h2 data-i18n-html="heroTitle">আপনার কথা পৌঁছাক<br />সঠিক জায়গায়।</h2><p data-i18n="heroText">অভিযোগ জানান, অগ্রগতি দেখুন, সমাধানের প্রতিটি ধাপের সঙ্গে থাকুন।</p><a class="primary" href="#new-complaint" data-i18n="submitNew">＋ নতুন অভিযোগ জানান</a></div>
+          <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="building one"></div><div class="building two"></div><div class="building three"></div><div class="path"></div><div class="person"><span></span></div><div class="leaf l1">●</div><div class="leaf l2">●</div></div>
+        </section>
+
+        <section class="stats"><article><span class="stat-icon blue">▱</span><div><strong id="totalCount">৩</strong><p data-i18n="total">মোট অভিযোগ</p></div></article><article><span class="stat-icon amber">◌</span><div><strong id="progressCount">২</strong><p data-i18n="inProgress">প্রক্রিয়াধীন</p></div></article><article><span class="stat-icon green">✓</span><div><strong>১</strong><p data-i18n="solved">সমাধান হয়েছে</p></div></article></section>
+
+        <div id="dashboardComplaintSection"><section id="complaints" class="section-heading"><div><h2 data-i18n="recent">আমার সাম্প্রতিক অভিযোগ</h2><p data-i18n="recentSub">আপনার অভিযোগগুলোর সর্বশেষ অবস্থা</p></div><button class="link-button" id="viewAll"><span data-i18n="viewAll">সবগুলো দেখুন</span> <span>→</span></button></section>
+        <section class="complaint-list" id="complaintList">
+          <article class="complaint-card" data-id="GV-2026-01842" data-description="আমাদের এলাকায় গত দুই সপ্তাহ ধরে বিশুদ্ধ পানির তীব্র সংকট চলছে। নলকূপগুলোতে পানির স্তর নেমে গেছে এবং অনেক পরিবার নিরাপদ পানি পাচ্ছে না।" data-attachments="পানির সমস্যার ছবি.jpg|এলাকার অবস্থানের নকশা.pdf"><div class="category water">⌁</div><div class="complaint-main"><div class="complaint-title"><h3>আমাদের এলাকায় বিশুদ্ধ পানির সংকট</h3><span class="badge review">তদন্ত চলছে</span></div><p>GV-2026-01842 &nbsp;·&nbsp; জমা: ১৮ সেপ্টেম্বর, ২০২৬</p><div class="mini-progress"><i style="width:52%"></i></div><small><b>ধাপ ৩ / ৫</b> — তদন্ত কর্মকর্তা: ইঞ্জি. নাজমুল হক</small></div><button class="details">বিস্তারিত <span>→</span></button></article>
+          <article class="complaint-card" data-id="GV-2026-01796" data-description="বাজার থেকে স্কুল পর্যন্ত সড়কের একটি অংশ ভেঙে চলাচলের অনুপযোগী হয়ে গেছে। বর্ষায় এখানে জল জমে দুর্ঘটনার ঝুঁকি তৈরি হয়।" data-attachments="ভাঙা রাস্তার ছবি.jpg"><div class="category road">⌁</div><div class="complaint-main"><div class="complaint-title"><h3>সড়কের ভাঙা অংশ মেরামতের আবেদন</h3><span class="badge forwarded">সিদ্ধান্তের অপেক্ষায়</span></div><p>GV-2026-01796 &nbsp;·&nbsp; জমা: ১২ সেপ্টেম্বর, ২০২৬</p><div class="mini-progress"><i style="width:76%"></i></div><small><b>ধাপ ৪ / ৫</b> — ইউএনও কার্যালয়ে সিদ্ধান্তের জন্য প্রেরিত</small></div><button class="details">বিস্তারিত <span>→</span></button></article>
+          <article class="complaint-card done-card" data-id="GV-2026-01653"><div class="category light">☼</div><div class="complaint-main"><div class="complaint-title"><h3>রাস্তার বাতি অকেজো থাকার অভিযোগ</h3><span class="badge done">সমাধান হয়েছে</span></div><p>GV-2026-01653 &nbsp;·&nbsp; জমা: ০২ সেপ্টেম্বর, ২০২৬</p><small><b>সমাধান:</b> ৮টি নতুন LED বাতি স্থাপন করা হয়েছে</small></div><button class="details">বিস্তারিত <span>→</span></button></article>
+        </section></div>
+        <section id="myComplaintsPage" hidden><div class="my-page-heading"><div><span class="eyebrow">নাগরিক অ্যাকাউন্ট</span><h2>আমার অভিযোগ</h2><p>আপনার জমা দেওয়া সব অভিযোগ ও তাদের বর্তমান অবস্থা</p></div><button class="link-button" id="backToDashboard">← ড্যাশবোর্ডে ফিরুন</button></div><div id="myComplaintMount"></div></section>
+      </main>
+    </div>
+
+    <div class="modal" id="complaintModal" aria-hidden="true"><div class="modal-box"><button class="close">×</button><div class="modal-top"><span class="category water">⌁</span><div><span class="eyebrow">অভিযোগের অগ্রগতি</span><h2 id="modalTitle">আমাদের এলাকায় বিশুদ্ধ পানির সংকট</h2><p id="modalId">GV-2026-01842</p></div></div><section class="evidence-section"><h3>সংযুক্ত প্রমাণ ও নথি</h3><div id="evidenceList" class="evidence-list"></div></section><div class="tracking"><div class="track-step complete"><i>✓</i><div><strong>অভিযোগ গ্রহণ করা হয়েছে</strong><p>১৮ সেপ্টেম্বর, ১০:৩২ AM · নাগরিক সেবা কেন্দ্র</p></div></div><div class="track-step complete"><i>✓</i><div><strong>তদন্ত কর্মকর্তা নিয়োগ করা হয়েছে</strong><p>২০ সেপ্টেম্বর, ০২:১৫ PM · জনস্বাস্থ্য প্রকৌশল অধিদপ্তর</p><em>তদন্ত কর্মকর্তা: ইঞ্জি. নাজমুল হক</em></div></div><div class="track-step current"><i>3</i><div><strong>সরেজমিন তদন্ত চলছে</strong><p>প্রমাণ যাচাই ও সংশ্লিষ্ট পক্ষের বক্তব্য নেওয়া হচ্ছে</p></div></div><div class="track-step"><i>4</i><div><strong>কর্তৃপক্ষের সিদ্ধান্ত / বিচার</strong><p>তদন্ত প্রতিবেদন পর্যালোচনা করে আদেশ দেওয়া হবে</p></div></div><div class="track-step"><i>5</i><div><strong>আদেশ বাস্তবায়ন ও সমাপ্তি</strong><p>ফলাফল দেখে আপনি মতামত জানাতে পারবেন</p></div></div></div><div class="escalation-note"><span>↗</span><div><strong>সময়মতো সমাধান না হলে কী হবে?</strong><p>নির্ধারিত সময় পার হলে অভিযোগটি স্বয়ংক্রিয়ভাবে ঊর্ধ্বতন কর্তৃপক্ষের কাছে পাঠানো হবে।</p></div></div><button class="primary full">অগ্রগতির আপডেট চাই</button></div></div>
+
+    <div class="modal form-modal" id="formModal" aria-hidden="true"><div class="modal-box"><button class="close">×</button><span class="eyebrow">নাগরিক সেবা</span><h2>নতুন অভিযোগ জানান</h2><p class="form-lead">সঠিক তথ্য দিলে আমরা দ্রুত সঠিক কর্তৃপক্ষের কাছে পৌঁছে দিতে পারব।</p><form id="complaintForm"><label>অভিযোগের বিষয়<input required id="subject" placeholder="যেমন: রাস্তায় জলাবদ্ধতা" /></label><label>বিভাগ নির্বাচন করুন<select id="department"><option>স্থানীয় সরকার ও সড়ক</option><option>পানি ও স্যানিটেশন</option><option>পুলিশ ও আইনশৃঙ্খলা</option><option>ভোক্তা অধিকার</option></select></label><label>বিস্তারিত লিখুন<textarea required placeholder="কোথায়, কী সমস্যা, কখন থেকে হচ্ছে—লিখুন"></textarea></label><label class="upload"><input id="evidenceFiles" type="file" multiple accept="image/*,.pdf,.doc,.docx" /><span>⌁</span><div><strong>ছবি বা নথি যুক্ত করুন</strong><small>ছবি, PDF বা Word ফাইল · সর্বোচ্চ ১০ MB</small></div></label><button class="primary full" type="submit">অভিযোগ জমা দিন <span>→</span></button></form></div></div>
+    <div class="modal form-modal" id="accountModal" aria-hidden="true"><div class="modal-box"><button class="close">×</button><span class="eyebrow">নিবন্ধন</span><h2>নতুন অ্যাকাউন্ট খুলুন</h2><p class="form-lead">NID বা জন্মসনদ দিয়ে পরিচয় যাচাইয়ের পর account সক্রিয় হবে।</p><form id="accountForm"><label>পূর্ণ নাম<input required placeholder="আপনার নাম লিখুন" /></label><label>মোবাইল নম্বর<input required type="tel" placeholder="০১XXXXXXXXX" /></label><label>পরিচয়পত্রের ধরন<select id="identityType"><option value="nid">জাতীয় পরিচয়পত্র (NID)</option><option value="birth">জন্ম নিবন্ধন সনদ</option></select></label><label id="identityNumberLabel">NID নম্বর<input id="identityNumber" required inputmode="numeric" placeholder="১০ বা ১৭ সংখ্যার NID নম্বর" /></label><label class="upload identity-upload"><input id="identityDocument" type="file" required accept="image/*,.pdf" /><span>⌁</span><div><strong>পরিচয়পত্রের কপি যুক্ত করুন</strong><small>NID বা জন্মসনদের ছবি/PDF · সর্বোচ্চ ৫ MB</small></div></label><label>আপনার ভূমিকা<select id="accountRole"><option value="citizen">নাগরিক — অভিযোগ জানাবেন ও অগ্রগতি দেখবেন</option><option value="authority">কর্তৃপক্ষ — তদন্ত, প্রতিবেদন ও সিদ্ধান্ত দেবেন</option></select></label><label id="authorityType" class="authority-field">কর্তৃপক্ষের ধরন<select><option>ইউএনও কার্যালয়</option><option>পুলিশ</option><option>ভোক্তা অধিকার</option><option>স্থানীয় সরকার</option></select></label><button class="primary full" type="submit">যাচাইয়ের জন্য জমা দিন <span>→</span></button></form></div></div>
+    <div class="modal" id="notificationModal" aria-hidden="true"><div class="modal-box notification-box"><button class="close">×</button><span class="eyebrow">বিজ্ঞপ্তি</span><h2>সর্বশেষ আপডেট</h2><div class="notification-item unread"><span>◉</span><div><strong>তদন্ত কর্মকর্তা নিয়োগ করা হয়েছে</strong><p>পানি সংকটের অভিযোগটি ইঞ্জি. নাজমুল হকের কাছে তদন্তের জন্য পাঠানো হয়েছে।</p><small>আজ, ১০:১৫ AM</small></div></div><div class="notification-item unread"><span>◉</span><div><strong>সিদ্ধান্তের তারিখ নির্ধারণ হয়েছে</strong><p>সড়ক মেরামত সংক্রান্ত অভিযোগটি ২৫ সেপ্টেম্বর ইউএনও কার্যালয়ে পর্যালোচনা হবে।</p><small>গতকাল, ০৪:৪০ PM</small></div></div><div class="notification-item"><span>✓</span><div><strong>অভিযোগের কাজ সম্পন্ন হয়েছে</strong><p>রাস্তার বাতি মেরামতের কাজ সম্পন্ন হয়েছে। আপনার মতামত জানান।</p><small>১৮ সেপ্টেম্বর</small></div></div></div></div>
+    <div class="toast" id="toast">আপনার অভিযোগটি সফলভাবে জমা হয়েছে।</div>
+    <script src="app.js"></script>
+  </body>
+</html>
